@@ -1,0 +1,22 @@
+{
+  "name": "gmail-hash",
+  "version": "0.0.1",
+  "description": "A chrome extension that adds a random hash to a gmail address to prevent reusability in case a service get's leaked",
+  "manifest_version": 2,
+  "permissions": ["contextMenus", "storage"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "js": ["content.js"],
+      "run_at": "document_end",
+      "all_frames": true
+    }
+  ],
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}

@@ -1,13 +1,38 @@
 // Saves options to chrome.storage
-function save_options() {
+
+function isEmail(email) {
+  var re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+  return re.test(String(email).toLowerCase());
+}
+
+function isGmail(email) {
+  const [localPart, domain] = email.split("@");
+  return ["gmail.com", "googlemail.com"].includes(domain);
+}
+
+function containsPlusSign(email) {
+  const [localPart, domain] = email.split("@");
+  return localPart.includes("+");
+}
+
+function save_options(e) {
+  e.preventDefault();
   var email = document.getElementById("email").value;
+  var status = document.getElementById("status");
+  if (!isEmail(email) || !isGmail(email) || containsPlusSign(email)) {
+    status.textContent = "This is not a valid Gmail address!";
+    setTimeout(function() {
+      status.textContent = "";
+    }, 750);
+    return;
+  }
   chrome.storage.sync.set(
     {
       gmail: email
     },
     function() {
       // Update status to let user know options were saved.
-      var status = document.getElementById("status");
+
       status.textContent = "Options saved.";
       setTimeout(function() {
         status.textContent = "";
@@ -29,5 +54,7 @@ function restore_options() {
     }
   );
 }
+
 document.addEventListener("DOMContentLoaded", restore_options);
-document.getElementById("save").addEventListener("click", save_options);
+document.getElementById("gmail-form").addEventListener("submit", save_options);
+// document.getElementById("save").addEventListener("click", save_options);

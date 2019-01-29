@@ -5,7 +5,7 @@ Please use it in combination with a password manager.
 
 Freely available to [download here](https://chrome.google.com/webstore/detail/njjpbfibgmkogjbfkafflpodelhchfaf).
 
-# Demo
+# Demo (Youtube)
 
 [![Mail Hash screen capture](https://img.youtube.com/vi/pZFtJFBof9w/maxresdefault.jpg)](https://www.youtube.com/watch?v=pZFtJFBof9w)
 

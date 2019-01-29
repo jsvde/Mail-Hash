@@ -12,11 +12,14 @@ All emails from facebook will still reach your inbox. You can simply block any e
 
 Let's say a service get's hacked and your credentials wind up in a database like [have i been pwned?](https://haveibeenpwned.com/)
 
-When you use plus tags such as 'facebook' or 'twitter' or 'servicename' it's pretty easy for an attacker to still determine your email address for another service and try to get in with the leaked passwords.
+When you use plus tags such as _facebook_ or _twitter_ or _servicename_ it's pretty easy for an attacker to still determine your email address for another service and try to get in with the leaked passwords.
 
 Mail hash adds a random hash to your mail address!
+
 _your.name@gmail.com_ --> _your.name+6as6d7@gmail.com_
+
 _your.name@gmail.com_ --> _your.name+7jsjdl@gmail.com_
+
 _your.name@gmail.com_ --> _your.name+lflfus@gmail.com_
 
 each time you hit the button.

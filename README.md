@@ -7,7 +7,7 @@ Freely available to [download here](https://chrome.google.com/webstore/detail/nj
 
 # Demo (Youtube)
 
-[![Mail Hash screen capture](https://img.youtube.com/vi/pZFtJFBof9w/maxresdefault.jpg)](https://www.youtube.com/watch?v=pZFtJFBof9w)
+[![Mail Hash screen capture](https://i.imgur.com/YUUTWbC.png)](https://www.youtube.com/watch?v=pZFtJFBof9w)
 
 # Why?
 

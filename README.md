@@ -28,6 +28,6 @@ Your hashed email address becomes part of the key you use to access and login to
 
 Attackers can't easily reuse the credentials for brute force attacks on other services if you use a differnt hash every time.
 
-# Inspiration
+# Credit
 
 This was inspired by [this tweet](https://twitter.com/levelsio/status/1085785937601212417) by [@levelsio](https://twitter.com/levelsio)

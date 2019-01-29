@@ -1,16 +1,16 @@
-copyPathMenuEntryId = chrome.contextMenus.create({
-  title: "Insert Gmail with hash",
-  id: "gmail-hash",
+chrome.contextMenus.create({
+  title: "Insert mail hash",
+  id: "mail-hash",
   contexts: ["editable"],
-  onclick: gmailHashClickCallback
+  onclick: mailHashClickCallback
 });
 
-function gmailHashClickCallback(info, tab) {
-  chrome.storage.sync.get("gmail", function(data) {
-    if (data.gmail) {
+function mailHashClickCallback(info, tab) {
+  chrome.storage.sync.get("mail", function(data) {
+    if (data.mail) {
       chrome.tabs.sendMessage(tab.id, {
-        msg: "generateGmailHash",
-        gmail: data.gmail
+        msg: "generateMailHash",
+        mail: data.mail
       });
     } else {
       chrome.runtime.openOptionsPage();

@@ -12,7 +12,7 @@ document.addEventListener(
   true
 );
 
-function generateHash(length = 10) {
+function generateHash(length = 5) {
   var text = "";
   var possible =
     "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
@@ -33,7 +33,7 @@ function hashMail(email) {
 }
 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request && request.msg == "generateGmailHash") {
-    clickedEl.value = hashMail(request.gmail);
+  if (request && request.msg == "generateMailHash") {
+    clickedEl.value = hashMail(request.mail);
   }
 });

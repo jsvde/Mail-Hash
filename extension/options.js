@@ -5,11 +5,6 @@ function isEmail(email) {
   return re.test(String(email).toLowerCase());
 }
 
-function isGmail(email) {
-  const [localPart, domain] = email.split("@");
-  return ["gmail.com", "googlemail.com"].includes(domain);
-}
-
 function containsPlusSign(email) {
   const [localPart, domain] = email.split("@");
   return localPart.includes("+");
@@ -19,8 +14,8 @@ function save_options(e) {
   e.preventDefault();
   var email = document.getElementById("email").value;
   var status = document.getElementById("status");
-  if (!isEmail(email) || !isGmail(email) || containsPlusSign(email)) {
-    status.textContent = "This is not a valid Gmail address!";
+  if (!isEmail(email) || containsPlusSign(email)) {
+    status.textContent = "This is not a valid email address!";
     setTimeout(function() {
       status.textContent = "";
     }, 750);
@@ -28,7 +23,7 @@ function save_options(e) {
   }
   chrome.storage.sync.set(
     {
-      gmail: email
+      mail: email
     },
     function() {
       // Update status to let user know options were saved.
@@ -47,14 +42,13 @@ function restore_options() {
   // Use default value color = 'red' and likesColor = true.
   chrome.storage.sync.get(
     {
-      gmail: ""
+      mail: ""
     },
     function(items) {
-      document.getElementById("email").value = items.gmail;
+      document.getElementById("email").value = items.mail;
     }
   );
 }
 
 document.addEventListener("DOMContentLoaded", restore_options);
-document.getElementById("gmail-form").addEventListener("submit", save_options);
-// document.getElementById("save").addEventListener("click", save_options);
+document.getElementById("mail-form").addEventListener("submit", save_options);

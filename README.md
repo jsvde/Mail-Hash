@@ -2,7 +2,7 @@
 
 a simple chrome extension that let's you add random hashes to any [plus addressable](https://www.fastmail.com/help/receive/addressing.html) email address such as gmail, Fastmail and [many more](https://en.wikipedia.org/wiki/Comparison_of_webmail_providers#Features). Please use it in combination with a password manager.
 
-Freely available to [download here](http://chrome-app-store-address.com).
+Freely available to [download here](https://chrome.google.com/webstore/detail/njjpbfibgmkogjbfkafflpodelhchfaf).
 
 # Why?
 

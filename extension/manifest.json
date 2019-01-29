@@ -1,7 +1,7 @@
 {
-  "name": "Gmail Hashify",
+  "name": "Mail Hash",
   "version": "0.0.1",
-  "description": "A chrome extension that adds a random hash to a gmail address to prevent reusability in case a service get's leaked",
+  "description": "A chrome extension that adds a random hash to a plusaddressable email address to prevent reusability in case a service get's leaked",
   "manifest_version": 2,
   "permissions": ["contextMenus", "storage"],
   "background": {

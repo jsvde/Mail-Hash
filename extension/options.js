@@ -11,7 +11,7 @@ function containsPlusSign(email) {
 }
 
 function containsAtSign(domain) {
-  return localPart.includes("@");
+  return domain.includes("@");
 }
 
 function save_options(e) {

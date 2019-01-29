@@ -1,1 +1,3 @@
 *.pem
+/assets
+/logo

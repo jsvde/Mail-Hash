@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Gmail Hash Options</title>
+    <title>Mail Hash Options</title>
     <style>
       body {
         background: #eee;
@@ -31,7 +31,7 @@
         width: 100%;
         display: block;
       }
-      .gmail {
+      .mail {
         display: flex;
         flex-direction: row;
         width: 100%;
@@ -68,17 +68,30 @@
       button:hover {
         background: #9b3426;
       }
+
+      a {
+        color: #9b3426;
+      }
     </style>
   </head>
   <body>
     <form id="gmail-form">
-      <!-- <span><img src="icon-128.png" /> Gmail hashify </span> -->
-      <label for="email">Gmail address</label>
-      <div class="gmail">
+      <label for="email">Enter your email address</label>
+      <div class="mail">
         <input type="email" id="email" placeholder="your.name@gmail.com" />
         <button type="submit" id="save">Save</button>
       </div>
       <div id="status"></div>
+      <p>
+        Only requirement is that your provider supports
+        <b>plus addressing</b> such as gmail, FastMail, Mail.com, Outlook.com
+        and
+        <a
+          href="https://en.wikipedia.org/wiki/Comparison_of_webmail_providers#Features"
+          target="_blank"
+          >many more</a
+        >
+      </p>
     </form>
 
     <script src="options.js"></script>

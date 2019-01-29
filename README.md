@@ -23,3 +23,7 @@ _your.name@gmail.com_ --> _your.name+7jsjdl@gmail.com_
 _your.name@gmail.com_ --> _your.name+lflfus@gmail.com_
 
 each time you hit the button.
+
+# Inspiration
+
+This extension is inspired by [this tweet](https://twitter.com/levelsio/status/1085785937601212417) by [@levelsio](https://twitter.com/levelsio)

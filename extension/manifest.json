@@ -1,7 +1,7 @@
 {
   "name": "Mail Hash",
   "version": "0.1.0",
-  "description": "A chrome extension that adds a random hash to a plus addressable email address or to a custom domain to prevent reusability in case a service get's leaked",
+  "description": "A chrome extension that adds a random hash to a plus addressable email address or to a custom domain",
   "manifest_version": 2,
   "permissions": ["contextMenus", "storage", "activeTab"],
   "background": {

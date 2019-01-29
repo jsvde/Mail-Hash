@@ -81,7 +81,7 @@ function change_settings(e) {
     email.value = "";
   } else if (type == "plus") {
     emailLabel.textContent = "Enter your email address";
-    email.placeholder = "yor.name@gmail.com";
+    email.placeholder = "your.name@gmail.com";
     email.value = "";
   }
   console.log(e);

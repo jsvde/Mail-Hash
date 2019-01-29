@@ -1,4 +1,4 @@
-chrome.contextMenus.create({
+const root_menu_item = chrome.contextMenus.create({
   title: "Insert Mail Hash",
   id: "mail-hash",
   contexts: ["editable"],

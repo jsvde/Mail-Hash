@@ -94,16 +94,43 @@
       </div>
 
       <div id="status"></div>
-      <p>
-        Only requirement is that your provider supports
-        <b>plus addressing</b> such as gmail, FastMail, Mail.com, Outlook.com
-        and
-        <a
-          href="https://en.wikipedia.org/wiki/Comparison_of_webmail_providers#Features"
-          target="_blank"
-          >many more</a
-        >
-      </p>
+      <div id="plus-desc">
+        <p>
+          If your email provider supports
+          <a
+            href="https://www.fastmail.com/help/receive/addressing.html"
+            target="_blank"
+            ><i>plus addressing</i></a
+          >
+          Mail Hash will append a hash to your email address:
+        </p>
+        <p>your.name@gmail.com &rarr; your.name<b>+h7so1</b>@gmail.com</p>
+        <p>
+          Providers that support <i>plus addressing</i> include gmail, FastMail,
+          Mail.com, Outlook.com and
+          <a
+            href="https://en.wikipedia.org/wiki/Comparison_of_webmail_providers#Features"
+            target="_blank"
+            >many more</a
+          >
+        </p>
+      </div>
+      <div id="catch-all-desc" style="display:none">
+        <p>
+          If your provide a custom domain Mail Hash will prepend a hash to your
+          email address:
+        </p>
+        <p>my-domain.com &rarr; <b>ZpGM5rrfZ6</b>@my-domain.com</p>
+        <p>
+          You just need to set up
+          <a
+            href="https://www.fastmail.com/help/receive/alias-catchall.html"
+            target="_blank"
+            ><b>catch-all/wildcard</b></a
+          >
+          for your domain.
+        </p>
+      </div>
     </form>
 
     <script src="options.js"></script>

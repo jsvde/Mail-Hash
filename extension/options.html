@@ -82,10 +82,14 @@
   </head>
   <body>
     <form id="mail-form">
-      <label for="type">Mail Hash Configuration</label>
+      <label for="type">Mail Hash Mode</label>
       <select id="type">
-        <option value="plus">Plus Address (provider)</option>
-        <option value="catchall">Catchall (custom domain)</option>
+        <optgroup label="Use for providers like gmail, FastMail, etc.">
+          <option value="plus">plus addressing</option>
+        </optgroup>
+        <optgroup label="Use for custom domain">
+          <option value="catchall">catch-all/wildcard</option>
+        </optgroup>
       </select>
       <label for="email" id="emailLabel">Enter your email address</label>
       <div class="mail">

@@ -1,6 +1,6 @@
 {
   "name": "Mail Hash",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Add a random hash to a plus addressable email address or to a custom domain",
   "manifest_version": 2,
   "permissions": ["contextMenus", "storage", "activeTab"],

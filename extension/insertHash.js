@@ -18,9 +18,18 @@ function hashMail(email) {
   }
 }
 
-chrome.storage.sync.get("mail", data => {
-  if (data.mail) {
-    document.activeElement.value = hashMail(data.mail);
+function hashCatchAll(domain) {
+  const hash = generateHash(20);
+  return hash + "@" + domain;
+}
+
+chrome.storage.sync.get(["mail", "type"], data => {
+  const type = data.type;
+  const mail = data.mail;
+  if (type && mail && type == "plus") {
+    document.activeElement.value = hashMail(mail);
+  } else if (type && mail && type == "catchall") {
+    document.activeElement.value = hashCatchAll(mail);
   } else {
     chrome.runtime.sendMessage({ action: "openOptionsPage" });
   }

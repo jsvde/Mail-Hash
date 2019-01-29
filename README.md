@@ -24,6 +24,10 @@ _your.name@gmail.com_ --> _your.name+lflfus@gmail.com_
 
 each time you hit the button.
 
+Your hashed email address becomes part of the key you use to access and login to a service.
+
+Attackers can't easily reuse the credentials for brute force attacks on other services if you use a differnt hash every time.
+
 # Inspiration
 
-This extension is inspired by [this tweet](https://twitter.com/levelsio/status/1085785937601212417) by [@levelsio](https://twitter.com/levelsio)
+This was inspired by [this tweet](https://twitter.com/levelsio/status/1085785937601212417) by [@levelsio](https://twitter.com/levelsio)

@@ -1,17 +1,3 @@
-var clickedEl = null;
-
-document.addEventListener(
-  "mousedown",
-  function(event) {
-    //right click
-
-    if (event.button == 2) {
-      clickedEl = event.target;
-    }
-  },
-  true
-);
-
 function generateHash(length = 5) {
   var text = "";
   var possible =
@@ -32,8 +18,10 @@ function hashMail(email) {
   }
 }
 
-chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
-  if (request && request.msg == "generateMailHash") {
-    clickedEl.value = hashMail(request.mail);
+chrome.storage.sync.get("mail", data => {
+  if (data.mail) {
+    document.activeElement.value = hashMail(data.mail);
+  } else {
+    chrome.runtime.sendMessage({ action: "openOptionsPage" });
   }
 });

@@ -1,19 +1,21 @@
 chrome.contextMenus.create({
-  title: "Insert mail hash",
+  title: "Insert Mail Hash",
   id: "mail-hash",
   contexts: ["editable"],
-  onclick: mailHashClickCallback
+  onclick: () => {
+    chrome.tabs.executeScript({
+      file: "insertHash.js",
+      runAt: "document_end"
+    });
+  }
 });
 
-function mailHashClickCallback(info, tab) {
-  chrome.storage.sync.get("mail", function(data) {
-    if (data.mail) {
-      chrome.tabs.sendMessage(tab.id, {
-        msg: "generateMailHash",
-        mail: data.mail
-      });
-    } else {
+chrome.runtime.onMessage.addListener(message => {
+  switch (message.action) {
+    case "openOptionsPage":
       chrome.runtime.openOptionsPage();
-    }
-  });
-}
+      break;
+    default:
+      break;
+  }
+});

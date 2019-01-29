@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A chrome extension that adds a random hash to a plusaddressable email address to prevent reusability in case a service get's leaked",
   "manifest_version": 2,
-  "permissions": ["contextMenus", "storage"],
+  "permissions": ["contextMenus", "storage", "activeTab"],
   "background": {
     "scripts": ["background.js"]
   },
@@ -13,19 +13,11 @@
       "24": "icon-24.png",
       "32": "icon-32.png"
     },
-    "default_title": "GmailHash",
+    "default_title": "Mail Hash",
     "default_popup": "options.html"
   },
   "icons": { "16": "icon-16.png", "48": "icon-48.png", "128": "icon-128.png" },
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'",
-  "content_scripts": [
-    {
-      "matches": ["http://*/*", "https://*/*"],
-      "js": ["content.js"],
-      "run_at": "document_end",
-      "all_frames": true
-    }
-  ],
   "options_ui": {
     "page": "options.html",
     "open_in_tab": false

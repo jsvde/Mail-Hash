@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Mail Hash Options</title>
+    <style>
+      body {
+        background: #eee;
+      }
+      form {
+        margin: 20px;
+        min-width: 350px;
+      }
+
+      span {
+        display: block;
+        width: 100%;
+        text-align: left;
+        margin-bottom: 30px;
+        font-weight: 600;
+        font-size: 18px;
+      }
+
+      img {
+        width: 48px;
+        vertical-align: middle;
+      }
+      label {
+        font-weight: 600;
+        text-transform: uppercase;
+        font-size: 12px;
+        width: 100%;
+        display: block;
+      }
+      .mail {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+      }
+      input,
+      #type {
+        display: block;
+        margin: 10px 0;
+        height: 2em;
+        border: 0;
+        flex: 1;
+        border-radius: 4px 0 0 4px;
+        padding: 5px 24px;
+        background: #fff;
+        font-size: 16px;
+        color: #222;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.17);
+        outline: none;
+      }
+
+      #type {
+        width: 100%;
+      }
+
+      button {
+        background: #dc473a;
+        color: #fff;
+        font-weight: 600;
+        font-size: 12px;
+        padding: 12px 24px;
+        margin: 10px 0;
+        border-radius: 0 4px 4px 0;
+        border: 0;
+        outline: none;
+        cursor: pointer;
+        display: inline-block;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.17);
+      }
+
+      button:hover {
+        background: #9b3426;
+      }
+
+      a {
+        color: #9b3426;
+      }
+    </style>
+  </head>
+  <body>
+    <form id="mail-form">
+      <label for="type">Mail Hash Mode</label>
+      <select id="type">
+        <optgroup label="Use for providers like gmail, FastMail, etc.">
+          <option value="plus">plus addressing</option>
+        </optgroup>
+        <optgroup label="Use for custom domain">
+          <option value="catchall">catch-all/wildcard</option>
+        </optgroup>
+      </select>
+      <label for="email" id="emailLabel">Enter your email address</label>
+      <div class="mail">
+        <input type="text" id="email" placeholder="your.name@gmail.com" />
+        <button type="submit" id="save">Save</button>
+      </div>
+
+      <div id="status"></div>
+      <div id="plus-desc">
+        <p>
+          If your email provider supports
+          <a
+            href="https://www.fastmail.com/help/receive/addressing.html"
+            target="_blank"
+            ><i>plus addressing</i></a
+          >
+          Mail Hash will append a hash to your email address:
+        </p>
+        <p>your.name@gmail.com &rarr; your.name<b>+h7so1</b>@gmail.com</p>
+        <p>
+          Providers that support <i>plus addressing</i> include gmail, FastMail,
+          Mail.com, Outlook.com and
+          <a
+            href="https://en.wikipedia.org/wiki/Comparison_of_webmail_providers#Features"
+            target="_blank"
+            >many more</a
+          >
+        </p>
+      </div>
+      <div id="catch-all-desc" style="display:none">
+        <p>
+          If your provide a custom domain Mail Hash will prepend a hash to your
+          email address:
+        </p>
+        <p>my-domain.com &rarr; <b>ZpGM5rrfZ6</b>@my-domain.com</p>
+        <p>
+          You just need to set up
+          <a
+            href="https://www.fastmail.com/help/receive/alias-catchall.html"
+            target="_blank"
+            ><b>catch-all/wildcard</b></a
+          >
+          for your domain.
+        </p>
+      </div>
+    </form>
+
+    <script src="options.js"></script>
+  </body>
+</html>

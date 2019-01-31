@@ -1,0 +1,30 @@
+{
+  "name": "Mail Hash",
+  "version": "0.1.2",
+  "description": "Add a random hash to a plus addressable email address or to a custom domain",
+  "manifest_version": 2,
+  "permissions": ["contextMenus", "storage", "activeTab"],
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "addon@example.com",
+      "strict_min_version": "42.0"
+    }
+  },
+  "browser_action": {
+    "default_icon": {
+      "16": "icon-16.png",
+      "24": "icon-24.png",
+      "32": "icon-32.png"
+    },
+    "default_title": "Mail Hash",
+    "default_popup": "options.html"
+  },
+  "icons": { "16": "icon-16.png", "48": "icon-48.png", "128": "icon-128.png" },
+  "options_ui": {
+    "page": "options.html",
+    "open_in_tab": false
+  }
+}
